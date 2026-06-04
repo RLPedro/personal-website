@@ -33,8 +33,8 @@ const ProjectCard = ({ project }) => {
             <div className="p-4 bg-zinc-900">
                 <div className="flex flex-col h-44 md:h-48">
                     <div className="flex items-center justify-end gap-2">
-                        <SmallBadge href={project.demo}>Demo</SmallBadge>
-                        <SmallBadge href={project.code}>Code</SmallBadge>
+                        {project.demo && <SmallBadge href={project.demo}>Demo</SmallBadge>}
+                        {project.code && <SmallBadge href={project.code}>Code</SmallBadge>}
                     </div>
 
                     <h3 className="mt-2 text-sm md:text-sm font-semibold">{project.title}</h3>

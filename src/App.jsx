@@ -26,7 +26,7 @@ const App = () => {
                 </h1>
 
                 <p className="mt-4 text-sm text-white/75 leading-relaxed">
-                  Software engineer and business developer based in Sweden.
+                  Software engineer based in Gothenburg, Sweden.<br />
                   Classical musician in a previous life.
                   Dad.
                 </p>
@@ -35,16 +35,20 @@ const App = () => {
 
                 <h4 className="text-xs text-white/60">Experience</h4>
                 <p className="mt-4 text-sm text-white/75">
-                  Software engineer @ Umain (Eidra). 2026-.
+                  <em>Full Stack & AI engineer</em> @ Umain (Eidra), 2026-<br />
+                  Building agentic workflows and AI-driven solutions.
                 </p>
                 <p className="mt-4 text-sm text-white/75">
-                  Front-end developer @ Sensys Gatso, responsible for the Puls' user interface. 2022-2025.
+                  <em>Front-end developer</em> @ Sensys Gatso, 2022-2025 <br />
+                  Built Flux UI serving Traffikverket and responsible for the Puls' user interface serving clients worldwide.
                 </p>
                 <p className="mt-4 text-sm text-white/75">
-                  Full-stack developer @ {"</salt>"}, educated in the "hardest bootcamp in the world" and consultant after that. 2021-2023.
+                  <em>Full-stack developer</em> @ {"</salt>"}, 2021-2023<br />
+                  Educated in the "hardest bootcamp in the world", then worked as consultant.
                 </p>
                 <p className="mt-4 text-sm text-white/75">
-                  Lutenist and singer, recorded a solo album and performed around the world. 2009-.
+                  <em>Lutenist & singer</em>, 2009-<br />
+                  Recorded a solo album and performed around the world.
                 </p>
 
                 <div className="mt-6">
