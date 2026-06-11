@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen text-white antialiased bg-neutral-800">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <aside className="lg:col-span-5">
             <div className="sticky top-8">
@@ -119,20 +119,21 @@ const App = () => {
           </aside>
 
           <section className="lg:col-span-7">
-            <div className="mb-6">
-              <h2 className="text-xs md:text-sm text-right font-semibold">selected projects</h2>
+            <div className="mb-6 text-right">
+              <a
+                href="https://www.github.com/rlpedro"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs md:text-sm font-semibold text-white/60 hover:text-yellow-600 transition-colors duration-200"
+              >
+                View all projects
+              </a>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {projects.map((p) => (
                 <ProjectCard key={p.id} project={p} />
               ))}
-            </div>
-
-            <div className="mt-8 text-center">
-              <a href="https://www.github.com/rlpedro" target="_blank" rel="noreferrer" className="inline-block px-5 py-3 rounded bg-transparent">
-                View all projects
-              </a>
             </div>
           </section>
         </div>
