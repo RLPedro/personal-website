@@ -182,7 +182,7 @@ const App = () => {
             <div className="border-t border-white/10 pt-10">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-yellow-600">Projects</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-yellow-600">Code</p>
                 </div>
                 <a
                   href="https://www.github.com/rlpedro"
