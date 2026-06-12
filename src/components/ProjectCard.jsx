@@ -4,7 +4,7 @@ import TechBadge from "./TechBadge";
 
 const ProjectCard = ({ project }) => {
     return (
-        <Motion.div
+        <Motion.a
             href={project.demo ?? project.url}
             target="_blank"
             rel="noreferrer"
@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
                     </div>
                 </div>
             </div>
-        </Motion.div>
+        </Motion.a>
     );
 };
 
