@@ -17,24 +17,6 @@ const DEFAULT_BRUMA_POST = {
     "https://substackcdn.com/image/fetch/$s_!sgit!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbrumanotes.substack.com%2Fapi%2Fv1%2Fpost_preview%2F198602636%2Ftwitter.jpg%3Fversion%3D4",
 };
 
-const socialLinks = [
-  {
-    href: "https://www.linkedin.com/in/ricardoleitaopedro",
-    src: linkedin,
-    alt: "link to LinkedIn profile",
-  },
-  {
-    href: "https://x.com/ricardolpedro",
-    src: x,
-    alt: "link to X profile",
-  },
-  {
-    href: "https://www.instagram.com/ricardoleitaopedro/",
-    src: instagram,
-    alt: "link to Instagram profile",
-  },
-];
-
 const introLines = [
   "Software engineer based in Gothenburg, Sweden.",
   "Classical musician in a previous life.",
