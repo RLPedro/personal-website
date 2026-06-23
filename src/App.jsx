@@ -8,11 +8,11 @@ import ProjectCard from "./components/ProjectCard";
 import BrumaCard from "./components/BrumaCard";
 import SidebarContact from "./components/SidebarContact";
 
-const FEED_URL = "https://brumanotes.substack.com/feed";
+const API_PROXY_URL = "/api/substack";
 const DEFAULT_BRUMA_POST = {
-  title: "A thought on (not) listening",
-  subtitle: "Conversations are harder, but some of us might have an advantage.",
-  link: "https://brumanotes.substack.com/p/a-thought-on-not-listening",
+  title: "Bruma",
+  subtitle: "Fetching the latest post...",
+  link: "https://brumanotes.substack.com",
   image:
     "https://substackcdn.com/image/fetch/$s_!sgit!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbrumanotes.substack.com%2Fapi%2Fv1%2Fpost_preview%2F198602636%2Ftwitter.jpg%3Fversion%3D4",
 };
@@ -93,11 +93,6 @@ const stripHtml = (html) => {
   return doc.body.textContent?.trim() || "";
 };
 
-const extractImageFromHtml = (html) => {
-  const match = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
-  return match?.[1] || "";
-};
-
 const parseLatestPost = (text) => {
   const xml = new DOMParser().parseFromString(text, "application/xml");
   const item = xml.querySelector("item");
@@ -115,7 +110,6 @@ const parseLatestPost = (text) => {
   const image =
     item.querySelector("enclosure")?.getAttribute("url") ||
     item.querySelector("media\\:content")?.getAttribute("url") ||
-    extractImageFromHtml(item.querySelector("content\\:encoded")?.textContent || "") ||
     DEFAULT_BRUMA_POST.image;
 
   return { title, subtitle, link, image };
@@ -127,16 +121,11 @@ const App = () => {
   useEffect(() => {
     const fetchLatestPost = async () => {
       try {
-        let text = await fetchText(FEED_URL);
+        const text = await fetchText(API_PROXY_URL);
         setLatestPost(parseLatestPost(text));
-      } catch (primaryError) {
-        try {
-          const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(FEED_URL)}`;
-          const text = await fetchText(proxyUrl);
-          setLatestPost(parseLatestPost(text));
-        } catch (proxyError) {
-          console.error("Failed to load latest Bruma post:", proxyError || primaryError);
-        }
+        return;
+      } catch (error) {
+        console.error("Failed to load latest Bruma post from API proxy:", error);
       }
     };
 

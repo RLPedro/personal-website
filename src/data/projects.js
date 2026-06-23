@@ -2,7 +2,6 @@ import pythiaScreenshot from "../images/pythia/screenshot.png";
 import podcastScreenshot from "../images/podcast-research-assistant/screenshot.png";
 import neuroSignalScreenshot from "../images/neuro-signals/screenshot2.png";
 import politicalDiscourseScreenshot from "../images/political-discourse/screenshot.png";
-import brumaConsultancyScreenshot from "../images/bruma-consultancy/screenshot.png";
 
 export const projects = [
     {
